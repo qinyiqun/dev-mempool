@@ -1,0 +1,17 @@
+[package]
+name = "dev-mempool"
+version = "0.0.0"
+edition = "2021"
+authors = ["YdrMaster <ydrml@hotmail.com>"]
+
+[features]
+default = ["common-cpu", "nvidia-gpu"]
+common-cpu = []
+nvidia-gpu = ["cuda"]
+
+[dependencies]
+cuda = { git = "https://github.com/YdrMaster/cuda-driver", rev = "d089ada", optional = true }
+
+[build-dependencies]
+build-script-cfg = "0.0"
+search-cuda-tools = { git = "https://github.com/YdrMaster/cuda-driver", rev = "d089ada" }
