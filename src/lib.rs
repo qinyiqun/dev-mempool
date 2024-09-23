@@ -22,7 +22,7 @@ pub struct Snapshot {
 #[cfg(common_cpu)]
 mod common_cpu;
 #[cfg(common_cpu)]
-pub use common_cpu::{Blob, ThisThread};
+pub use common_cpu::Blob;
 
 #[cfg(nvidia_gpu)]
 mod nvidia_gpu;

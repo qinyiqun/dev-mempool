@@ -6,15 +6,7 @@ use std::{
     slice::{from_raw_parts, from_raw_parts_mut},
 };
 
-#[derive(Clone, Copy, Debug)]
-pub struct ThisThread;
-
-pub struct Blob {
-    ptr: NonNull<u8>,
-    len: usize,
-}
-
-impl Alloc<Blob> for ThisThread {
+impl<T> Alloc<Blob> for T {
     #[inline]
     fn alloc(&self, size: usize) -> Blob {
         Blob::new(size)
@@ -22,6 +14,11 @@ impl Alloc<Blob> for ThisThread {
 
     #[inline]
     fn free(&self, _mem: Blob) {}
+}
+
+pub struct Blob {
+    ptr: NonNull<u8>,
+    len: usize,
 }
 
 impl Blob {
