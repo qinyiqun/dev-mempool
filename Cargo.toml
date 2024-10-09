@@ -10,8 +10,8 @@ common-cpu = []
 nvidia-gpu = ["cuda"]
 
 [dependencies]
-cuda = { git = "https://github.com/YdrMaster/cuda-driver", rev = "d089ada", optional = true }
+cuda = { git = "https://github.com/YdrMaster/cuda-driver", rev = "ed0c936", optional = true }
 
 [build-dependencies]
 build-script-cfg = "0.0"
-search-cuda-tools = { git = "https://github.com/YdrMaster/cuda-driver", rev = "d089ada" }
+search-cuda-tools = { git = "https://github.com/YdrMaster/cuda-driver", rev = "ed0c936" }
