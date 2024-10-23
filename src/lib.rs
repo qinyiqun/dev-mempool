@@ -28,3 +28,8 @@ pub use common_cpu::Blob;
 mod nvidia_gpu;
 #[cfg(nvidia_gpu)]
 pub extern crate cuda;
+
+#[cfg(mthreads_gpu)]
+mod mthreads_gpu;
+#[cfg(mthreads_gpu)]
+pub extern crate mudrv;
