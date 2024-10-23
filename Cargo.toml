@@ -5,13 +5,16 @@ edition = "2021"
 authors = ["YdrMaster <ydrml@hotmail.com>"]
 
 [features]
-default = ["common-cpu", "nvidia-gpu"]
+default = ["common-cpu", "nvidia-gpu", "mthreads-gpu"]
 common-cpu = []
 nvidia-gpu = ["cuda"]
+mthreads-gpu = ["mudrv"]
 
 [dependencies]
 cuda = { git = "https://github.com/YdrMaster/cuda-driver", rev = "ad8c367", optional = true }
+mudrv = { git = "https://github.com/InfiniTensor/mudrv", rev = "0bb7573", optional = true }
 
 [build-dependencies]
 build-script-cfg = "0.0"
 search-cuda-tools = { git = "https://github.com/YdrMaster/cuda-driver", rev = "ad8c367" }
+search-musa-tools = { git = "https://github.com/InfiniTensor/mudrv", rev = "0bb7573" }
